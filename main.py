@@ -1,7 +1,7 @@
 import PyPDF2
 
 # Open the PDF file in read-binary mode
-with open('07_2023.pdf', 'rb') as file:
+with open('106.pdf', 'rb') as file:
     # Initialize PdfReader object with the password
     pdf_reader = PyPDF2.PdfReader(file, password='5521')
 
