@@ -2,6 +2,7 @@ import json
 from pdfpassremover import PDFPasswordRemover
 from utility import LoggerUtility
 
+#haha
 def main():
     logger = LoggerUtility.get_logger('PDFPasswordRemoverLogger')
 
