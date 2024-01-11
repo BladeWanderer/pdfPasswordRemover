@@ -15,7 +15,15 @@ def main():
 
 
     remover = PDFPasswordRemover(pdf_directory, unencrypted_directory, password, logger)
-    remover.decrypt_pdfs()
+    #remover.decrypt_pdfs()
+
+    try:
+        remover.decrypt_pdfs()
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        # Optionally re-raise the exception if it needs to be propagated
+        # raise
+
 
 if __name__ == "__main__":
     main()
