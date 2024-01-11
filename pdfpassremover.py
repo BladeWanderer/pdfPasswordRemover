@@ -17,7 +17,7 @@ def log_decorator(func):
             return result
         except Exception as e:
             #logger.error(f"An error occurred in {func.__name__}: {e}")
-            raise Exception("No pdf files")
+            raise Exception("No pdf files in the encrypted folder, please add them and run again")
     return wrapper
 
 # test42
