@@ -3,10 +3,10 @@ import os
 import glob
 
 # Original directory containing encrypted PDF files
-pdf_directory = r'/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/encripted'
+pdf_directory = '/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/encripted'
 
 # New directory for unencrypted files
-unencrypted_directory = r'/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/unencrypted'
+unencrypted_directory = '/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/unencrypted'
 
 # Create the directory for unencrypted files if it does not exist
 if not os.path.exists(unencrypted_directory):
