@@ -20,7 +20,7 @@ def log_decorator(func):
             raise
     return wrapper
 
-# test
+# test42
 
 class PDFPasswordRemover:
     def __init__(self, input_dir, output_dir, password, logger):
