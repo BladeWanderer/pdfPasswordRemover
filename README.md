@@ -1,6 +1,7 @@
 This project remove password from pdf's
 
 1. create a config.json file like so (absolute paths):
+   - make sure the pdf_directoryis the encrypted folder
 ````
    {
     "pdf_directory": "/path/to/encrypted/pdf/folder",

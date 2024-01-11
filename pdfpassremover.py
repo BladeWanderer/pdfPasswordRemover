@@ -28,7 +28,13 @@ class PDFPasswordRemover:
         self.input_dir = input_dir
         self.output_dir = output_dir
         self.password = password
+        self.ensure_input_dir()
         self.ensure_output_dir()
+
+    @log_decorator
+    def ensure_input_dir(self):
+        if not os.path.exists(self.input_dir):
+            os.makedirs(self.input_dir)
 
     @log_decorator
     def ensure_output_dir(self):
@@ -38,6 +44,8 @@ class PDFPasswordRemover:
     @log_decorator
     def decrypt_pdfs(self):
         pdf_filenames = glob.glob(os.path.join(self.input_dir, '*.pdf'))
+        if not pdf_filenames:
+            raise Exception(f"No PDF files found in the directory: {self.input_dir}")
         for filename in pdf_filenames:
             self.decrypt_each_pdf(filename)
 

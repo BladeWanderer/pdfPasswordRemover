@@ -1,5 +1,5 @@
 config.json
 anotherfiletobeignored.txt
-./encrypted/*.pdf
+encrypted/
 
-./unencrypted
+/unencrypted
