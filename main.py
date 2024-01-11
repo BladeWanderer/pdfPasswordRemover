@@ -1,22 +1,20 @@
-import PyPDF2
+import json
+from pdfpassremover import PDFPasswordRemover
+from utility import LoggerUtility
 
-# Open the PDF file in read-binary mode
-with open('106.pdf', 'rb') as file:
-    # Initialize PdfReader object with the password
-    pdf_reader = PyPDF2.PdfReader(file, password='5521')
+def main():
+    logger = LoggerUtility.get_logger('PDFPasswordRemoverLogger')
 
-    # Check if the PDF is encrypted (to double-check if the password is correct)
-    if not pdf_reader.is_encrypted:
-        raise Exception("Decryption failed. Check the password.")
+    with open('config.json', 'r') as config_file:
+        config = json.load(config_file)
 
-    # Now, create a PdfWriter object and add the decrypted pages
-    pdf_writer = PyPDF2.PdfWriter()
-    for page in pdf_reader.pages:
-        pdf_writer.add_page(page)  # Using the updated method name
-
-    # Create a new PDF file with the decrypted content
-    with open('unprotected.pdf', 'wb') as output_file:
-        pdf_writer.write(output_file)
+    pdf_directory = config['pdf_directory']
+    unencrypted_directory = config['unencrypted_directory']
+    password = config['password']
 
 
+    remover = PDFPasswordRemover(pdf_directory, unencrypted_directory, password, logger)
+    remover.decrypt_pdfs()
 
+if __name__ == "__main__":
+    main()

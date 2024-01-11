@@ -3,7 +3,7 @@ import os
 import glob
 
 # Original directory containing encrypted PDF files
-pdf_directory = '/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/encripted'
+pdf_directory = '/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/encrypted'
 
 # New directory for unencrypted files
 unencrypted_directory = '/Users/lenameer/Documents/01_from_last_place/PycharmProjects/pdfPasswordRemover/unencrypted'
