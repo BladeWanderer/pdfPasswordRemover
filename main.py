@@ -3,6 +3,7 @@ from pdfpassremover import PDFPasswordRemover
 from utility import LoggerUtility
 
 #haha53535
+# the answer is 42
 def main():
     logger = LoggerUtility.get_logger('PDFPasswordRemoverLogger')
 
